@@ -4,7 +4,7 @@ module.exports = {
   description: 'the blog of Gracia in 2021-4-10',
   dest: './dist',
   port: '7777',
-  // base: '/blog/',
+  base: '/gracia_blog/',
   // repo: 'https://github.com/txs1992/mt-blog',
   head: [
     ['link', { rel: 'icon', href: '/favicon.ico' }],
