@@ -188,6 +188,25 @@ export default {
 </script>
 ```
 
+```vue
+...mapState({
+    // 箭头函数使代码更简练
+    testNum1: state => state.testNum1,
+    // 传字符参数'testNum2' 等价于 'state => state.testNum2'
+    testNum2: "testNum2",
+	// 组件的局部变量与Vuex变量相加
+    testNum3(state) {
+    return state.testNum1 + this.localNum;
+    }
+}),
+...mapState([
+    // 映射this.testNum3为store.state.testNum3
+    "testNum3"
+])
+```
+
+
+
 ## 6.拆分写法
 
 store中的所有属性，都可以拆分成单独的js文件来书写
@@ -218,13 +237,13 @@ import getters from './getters'
 import mutations from './mutations'
 import actions from './actions'
 
-export default new Vue.Store({
+export default {
     namespaced:true, // 命名空间
-    state,
-    getters,
-    mutations,
+    state, // this.$store.state.user.xxx
+    getters, 
+    mutations,//this.$store.commit('user/xxx',xxx)
     actions
-})
+}
 ```
 
 store.js如下
@@ -251,10 +270,29 @@ vue文件获取信息
 <script>
 import { mapMutations } from 'vuex'
 export default {
+    computed:{
+      ...mapState({
+          // 箭头函数使代码更简练
+          testNum1: state => state.moduleA.testNum1
+      }),
+        // 第一个参数是namespace命名空间，填上对应的module名称即可
+      ...mapState("moduleA", {
+          testNum2: state => state.testNum2,
+          testNum3: "testNum3"
+      }),
+      ...mapState("moduleA",[
+          "testNum4"
+      ])
+    },
     methods: {
+        //...mapMutations('users',['xxx'])
         ...mapMutations({
-            'changeToken':'users/changeToken'
+            changeToken:'users/changeToken'
         }),
+        get(){
+            this.changeToken(payload),
+            // this.$store.commit('users/changeToken',payload);
+        }
     }
 }
 </script>
