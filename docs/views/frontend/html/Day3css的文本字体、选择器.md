@@ -2,10 +2,9 @@
 title: Day3css的文本字体、选择器
 date: 2020-4-25
 categories:
- - css
+  - css
 tags:
- - css
-publish: true
+  - css
 ---
 
 <!-- more -->
@@ -15,11 +14,11 @@ publish: true
 ## 一、文本属性
 
 - text-decoration:设置文字的装饰线
-  - none无任何装饰线，可以去除a元素默认的下划线
+  - none 无任何装饰线，可以去除 a 元素默认的下划线
   - underline：下划线
   - overline：上划线
   - line-through：中划线（删除线）
-  - u、ins元素默认就是设置了text-through为underline
+  - u、ins 元素默认就是设置了 text-through 为 underline
 - letter-word-spacing
 - text-transform
   - capitalize：将每个单词的首字符变为大写
@@ -27,7 +26,7 @@ publish: true
   - lowercase：将每个单词的所有字符变为小写
   - none：没有任何影响
 - text-indent：用于设置第一行内容的缩进
-  - text-indent：2em 刚好是缩进2个文字
+  - text-indent：2em 刚好是缩进 2 个文字
 - text-align:可用于设置元素内容在元素中的水平对齐
   - left：左对齐
   - right：右对齐
@@ -40,9 +39,9 @@ publish: true
 - fone-family:设置字体
 - font-weight
 - font-style
-  - em、i、cite、address、var、dfn等元素默认就是italic
+  - em、i、cite、address、var、dfn 等元素默认就是 italic
   - normal:常规显示
-  - italic：用字体的斜体显示(前提是font-family字体支持斜体)
+  - italic：用字体的斜体显示(前提是 font-family 字体支持斜体)
   - oblique：文本倾斜显示(文字倾斜)
 - font-variant（基本用不上）影响小写字母的显示形式
   - normal:常规显示
@@ -53,7 +52,7 @@ publish: true
 ## 三、更多选择器
 
 - 类选择器
-- id选择器
+- id 选择器
 - 元素选择器
 - 统配选择器
 
@@ -63,7 +62,7 @@ publish: true
 - ![image-20200425074934546](C:\Users\MengJiaXi\AppData\Roaming\Typora\typora-user-images\image-20200425074934546.png)
 - 后代选择器 div p span{}
 - 子选择器 div>span{}
-- 兄弟相邻选择器  div+p{} div元素后面紧挨着的p元素
-- 全体兄弟选择器 div~p{} div元素后面的所有p元素
+- 兄弟相邻选择器 div+p{} div 元素后面紧挨着的 p 元素
+- 全体兄弟选择器 div~p{} div 元素后面的所有 p 元素
 - 交集选择器 div.one{}
-- 并集选择器 div , .one , [title="text"]{} 所有的div元素+所有class有one的元素+所有title属性值等于text的元素
+- 并集选择器 div , .one , [title="text"]{} 所有的 div 元素+所有 class 有 one 的元素+所有 title 属性值等于 text 的元素

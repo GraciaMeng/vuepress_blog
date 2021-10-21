@@ -5,7 +5,6 @@ categories:
  - vue
 tags:
  - vue
-publish: true
 ---
 
 <!-- more -->

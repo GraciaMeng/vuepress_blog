@@ -2,19 +2,18 @@
 title: Day5css特性和表格
 date: 2020-4-29
 categories:
- - html
- - css
+  - html
+  - css
 tags:
- - html
- - css
-publish: true
+  - html
+  - css
 ---
 
 <!-- more -->
 
 # 内容概述
 
-## 一、css特性
+## 一、css 特性
 
 - 继承
   - 并不是所有的属性都可以继承（文本相关属性，更多查文档）
@@ -35,20 +34,20 @@ publish: true
   - ol/li 有序列表
   - ul/li 无序列表
   - dl/dt/dd
-    - dl ：定义列表，直接子元素只能是dt、dd
+    - dl ：定义列表，直接子元素只能是 dt、dd
     - dt：列表中每一项的项目名
-    - dd：列表中每一项的具体描述，是对dt的描述、解释、补充
-- 元素css属性
-  - list-style-type：设置li元素前吗标记的样式
+    - dd：列表中每一项的具体描述，是对 dt 的描述、解释、补充
+- 元素 css 属性
+  - list-style-type：设置 li 元素前吗标记的样式
   - ![image-20200428161144775](C:\Users\MengJiaXi\AppData\Roaming\Typora\typora-user-images\image-20200428161144775.png)
-  - list-style-image：设置某张图片为li元素前吗的标记，会覆盖list-style-type的设置
-  - list-style-position：设置li元素前面标记的位置，可以取outside、inside2个值
-  - list-style：是list-style-type、list-style-image、list-style-positio的缩写属性
+  - list-style-image：设置某张图片为 li 元素前吗的标记，会覆盖 list-style-type 的设置
+  - list-style-position：设置 li 元素前面标记的位置，可以取 outside、inside2 个值
+  - list-style：是 list-style-type、list-style-image、list-style-positio 的缩写属性
     - none
 
 ## 三、HTML-表格元素
 
-- table常见的元素
+- table 常见的元素
   - ![image-20200428161721665](C:\Users\MengJiaXi\AppData\Roaming\Typora\typora-user-images\image-20200428161721665.png)
   - table
     - 表格
@@ -72,15 +71,15 @@ publish: true
 ## 四、HTML-表单元素
 
 - input
-  - type：input的类型
+  - type：input 的类型
     - text 文本输入框（明文输入）
     - password （密文输入）
     - radio 单选框
-    - checkbox复选框
+    - checkbox 复选框
     - button 按钮
     - reset 重置
-      - 前提一：type必须是reset类型（value可以不写）
-      - 前提二：所有的内容必须在同一个表单中form
+      - 前提一：type 必须是 reset 类型（value 可以不写）
+      - 前提二：所有的内容必须在同一个表单中 form
     - submit 提交表单给服务器
     - file 文件上传
 - fieldset/legend

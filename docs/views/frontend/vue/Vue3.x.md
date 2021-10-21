@@ -1,49 +1,61 @@
+---
+title: vue3 api学习
+date: 2021-5-5
+categories:
+  - vue
+tags:
+  - vue3
+publish: true
+---
+
+<!-- more -->
+
 ## 一.setup()函数
 
-开始创建组件，在onBeforeMount之前，创建data数据和方法
+开始创建组件，在 onBeforeMount 之前，创建 data 数据和方法
 
 ### 1、ref()
 
 ```js
-const names = ref(["meng","du"])
+const names = ref(["meng", "du"]);
 ```
 
-方法中要使用.value才能获取值(template和script不统一，**不建议使用**)
+方法中要使用.value 才能获取值(template 和 script 不统一，**不建议使用**)
 
 ```js
-selectNameFun:(index:number)=>{
-	selected.value = names.value[index]
-}
+selectNameFun: (index: number) => {
+  selected.value = names.value[index];
+};
 ```
 
 ### 2、reactive
 
-把数据和方法都统一到reactive函数里面，方便管理(**建议使用**)
+把数据和方法都统一到 reactive 函数里面，方便管理(**建议使用**)
 
 ```js
-const data:DataProps = reactive({
-	names:["meng","du"]
-})
+const data: DataProps = reactive({
+  names: ["meng", "du"],
+});
 //DataProps是类型注解，要是有interface
 ```
 
-方法中直接使用data.获取数据，而且页面渲染也需要data.
+方法中直接使用 data.获取数据，而且页面渲染也需要 data.
 
 ```js
-selectNameFun:(index:number)=>{
-	data.selected = data.names[index]
-}
+selectNameFun: (index: number) => {
+  data.selected = data.names[index];
+};
 ```
 
 ### 3、toRefs
 
-可以使页面渲染不使用data.方式
+可以使页面渲染不使用 data.方式
 
 ```js
 const refData = toRefs(data);
 return {
-    ...refData
-}
+  ...refData,
+};
 ```
 
 ## 二、生命周期函数
@@ -88,7 +100,7 @@ return {
 
 状态跟踪钩子函数，数据渲染和更新时触发
 
-有event参数
+有 event 参数
 
 #### （12）onRenderTriggered
 
@@ -96,11 +108,10 @@ return {
 
 ## 三、内置函数
 
-### 1、watch监听器
+### 1、watch 监听器
 
 ```
 watch(overText[要监听的数据],(newVal,oldVal)=>{
 
 })
 ```
-

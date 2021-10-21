@@ -1,3 +1,0 @@
-Vue源码了解
-
-Vue.extend返回一个构造函数，然后通过Vue.component注册这个构造函数

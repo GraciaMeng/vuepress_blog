@@ -1,25 +1,35 @@
+---
+title: vue小技巧
+date: 2021-6-27
+categories:
+  - vue
+tags:
+  - vue
+publish: true
+---
+
+<!-- more -->
+
 ## 1.根据路由记录动态生成面包屑内容
 
-给一个路由添加meta属性和里面的title属性
+给一个路由添加 meta 属性和里面的 title 属性
 
 ```vue
 <template>
-	<bread-crumb v-for="breadCrumbItem in breadCrumbList">{{breadCrumbItem.meta.title}}</bread-crumb>
+  <bread-crumb v-for="breadCrumbItem in breadCrumbList">{{
+    breadCrumbItem.meta.title
+  }}</bread-crumb>
 </template>
-computed: {
-	breadCrumbList(){
-    	return this.$route.matched;
-    }
-}
+computed: { breadCrumbList(){ return this.$route.matched; } }
 ```
 
-## 2.vuex状态持久化
+## 2.vuex 状态持久化
 
-当页面刷新之后，会清空vuex，因此要使用持久化
+当页面刷新之后，会清空 vuex，因此要使用持久化
 
-用localStorage或者sessionStorage存储数据，
+用 localStorage 或者 sessionStorage 存储数据，
 
-## 3.vue实现五星组件
+## 3.vue 实现五星组件
 
 ```js
 computed: {
@@ -27,7 +37,7 @@ computed: {
 		let result = [];
 		let score = Math.floor(this.score * 2) / 2;
 		let hasDecimal = score % 1 !== 0;
-        
+
         for(let i=0;i<score;i++){
             result.push('on')
         }
@@ -37,7 +47,7 @@ computed: {
         while(result.length < 5){
             result.push('off')
         }
-        
+
 	}
 }
 ```
@@ -48,23 +58,25 @@ computed: {
 
 ```vue
 <template>
-	<div @click="onClick">
-        <ul>
-            <li v-for="(item,index) in items" :key="index" :data-index="index">{{item}}</li>
-    	</ul>
-    </div>
+  <div @click="onClick">
+    <ul>
+      <li v-for="(item, index) in items" :key="index" :data-index="index">
+        {{ item }}
+      </li>
+    </ul>
+  </div>
 </template>
 <script>
 export default {
-    methods:{
-        onClick(e){
-            const index = e.target.getAttribute('data-index')
-        }
-    }
-}
+  methods: {
+    onClick(e) {
+      const index = e.target.getAttribute("data-index");
+    },
+  },
+};
 </script>
 ```
 
-## 5.如何获取组件渲染后的DOM
+## 5.如何获取组件渲染后的 DOM
 
 **this.$refs.test.$el ** 获取

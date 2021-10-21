@@ -2,12 +2,11 @@
 title: Day4伪元素和emmet语法
 date: 2020-4-26
 categories:
- - html
- - css
+  - html
+  - css
 tags:
- - html
- - css
-publish: true
+  - html
+  - css
 ---
 
 <!-- more -->
@@ -16,16 +15,16 @@ publish: true
 
 # 一、伪类和伪元素
 
-### 1.1伪类
+### 1.1 伪类
 
 - target：目标伪类
 - 元素状态伪类：disabled/enabled/checked（input）
 - 动态伪类：
 - - link：a
   - visited：a
-  - focus：a和input
-  - hover其他元素
-  - active其他元素
+  - focus：a 和 input
+  - hover 其他元素
+  - active 其他元素
 - 结构伪类
   - nth-child
     - 选择资源中的第几个
@@ -47,9 +46,9 @@ publish: true
   - root
 - 否定伪类
   - 特殊场景下用否定伪类
-  - class不香吗
+  - class 不香吗
 
-### 1.2伪元素
+### 1.2 伪元素
 
 - first-line
 - first-letter
@@ -57,18 +56,18 @@ publish: true
 - after
 - 建议：使用两个冒号
 
-# 二、Emmet语法
+# 二、Emmet 语法
 
-- !和html:5
+- !和 html:5
 - 大于号>和+
-- *和^和()
-- 属性id/class/普通
+- \*和^和()
+- 属性 id/class/普通
 - 内容{}
-- $
-- 隐形标签div ul>.item table>.row>.content
-- css emmet语法
+- \$
+- 隐形标签 div ul>.item table>.row>.content
+- css emmet 语法
 
-# 三、css的特性
+# 三、css 的特性
 
 child：孩子
 

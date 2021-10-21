@@ -2,10 +2,9 @@
 title: Day7元素类型、盒子类型
 date: 2020-5-2
 categories:
- - css
+  - css
 tags:
- - css
-publish: true
+  - css
 ---
 
 <!-- more -->
@@ -14,10 +13,10 @@ publish: true
 
 ## 一、元素类型
 
-- display其他值：list-item/table
-- visibility：visible显示元素/hidden隐藏元素
-  - 和display区别：none区别
-    - visibility虽然看不见，但是元素的框依旧留着，占据原来的位置
+- display 其他值：list-item/table
+- visibility：visible 显示元素/hidden 隐藏元素
+  - 和 display 区别：none 区别
+    - visibility 虽然看不见，但是元素的框依旧留着，占据原来的位置
 - overflow 用于控制内容溢出时的行为
   - visible 溢出的内容照样可见
   - hidden 溢出的内容直接裁剪
@@ -28,16 +27,16 @@ publish: true
 - 强调两个知识点
   - 空格产生的原因和消除方法
   - 元素的嵌套关系
-    - 块级元素和行内块级是可以嵌套其他元素（p元素不要嵌套其他元素）
+    - 块级元素和行内块级是可以嵌套其他元素（p 元素不要嵌套其他元素）
     - 行内元素不要嵌套会计元素和行内块级元素
 
 ## 二、盒子模型
 
 - 理解盒子模型
   - content
-  - padding内边距
-  - border边框
-  - margin外边距
+  - padding 内边距
+  - border 边框
+  - margin 外边距
 - content
   - width
   - min-width
@@ -45,15 +44,15 @@ publish: true
   - height
   - min-height
   - max-height
-- padding内边距
+- padding 内边距
   - padding：上右下左
 - margin
   - margin：上右下左
-  - margin的传递
-  - margin的折叠
+  - margin 的传递
+  - margin 的折叠
 - border
   - border：width 宽度 style 样式 color 颜色
-  - border实现其他效果
+  - border 实现其他效果
     - 比如三角效果
 - border-radius
   - 基本使用

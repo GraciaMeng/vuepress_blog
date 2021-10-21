@@ -2,10 +2,9 @@
 title: Day1基本元素
 date: 2020-4-24
 categories:
- - html
+  - html
 tags:
- - html
-publish: true
+  - html
 ---
 
 <!-- more -->
@@ -14,17 +13,17 @@ publish: true
 
 ## 一、网页的基本元素
 
-### 1.1文档声明
+### 1.1 文档声明
 
 - 不能省略
 - 放在页面的最前面
 
-### 1.2html元素
+### 1.2html 元素
 
 - 根元素->只存在一个
 - lang=en
 
-### 1.3head元素
+### 1.3head 元素
 
 - 元数据->metadata
 
@@ -42,11 +41,9 @@ publish: true
 
 ### 1.4body
 
+## 二、h 元素/p 元素/a 元素/img 元素/strong 元素
 
-
-## 二、h元素/p元素/a元素/img元素/strong元素
-
-- div: title(鼠标放在有title的div上会出现title的文本)
+- div: title(鼠标放在有 title 的 div 上会出现 title 的文本)
 
 - span:文本归类，内容包裹
 
@@ -56,17 +53,17 @@ publish: true
 
 - img:显示图片
 
-- h:有助于网站的SEO
+- h:有助于网站的 SEO
 
 - a: href ，
 
   target：使用前要加下划线
 
-  ​	self ；_**blank
+  ​ self ；\_\*\*blank
 
-  ​	和iframe一起使用,parent,top
+  ​ 和 iframe 一起使用,parent,top
 
-  base与a元素结合: base放在head里面，相当于加上一个域名，可以使body里面的链接可以补齐域名
+  base 与 a 元素结合: base 放在 head 里面，相当于加上一个域名，可以使 body 里面的链接可以补齐域名
 
 ## 三、br/hr/code（少用）
 
@@ -76,15 +73,13 @@ publish: true
 
 - hr：分割线
 
-  
-
 ## 四、字符实体
 
 空格：
 
 - pre（少用）
 - &nbsp:需要很多个才能空格明显
-- css样式 text-indent:2em 缩进2个字符
+- css 样式 text-indent:2em 缩进 2 个字符
 
 字符预留出来作特殊用途：
 
@@ -100,9 +95,9 @@ publish: true
 
 ![image-20200424090752702](C:\Users\MengJiaXi\AppData\Roaming\Typora\typora-user-images\image-20200424090752702.png)
 
-## 五、div和span元素
+## 五、div 和 span 元素
 
-## 六、img元素
+## 六、img 元素
 
 - src
   - 本地路径
@@ -112,24 +107,24 @@ publish: true
 - alt
   - 建议需要写
 
-## 七、a元素
+## 七、a 元素
 
-- href超链接
+- href 超链接
 - target
-  - _self(默认值)当前页面
-  - _blank在新窗口打开
-  - iframe的name
-    - _parent在父窗口打开
-    - _top在顶层窗口打开
-  - 
+  - \_self(默认值)当前页面
+  - \_blank 在新窗口打开
+  - iframe 的 name
+    - \_parent 在父窗口打开
+    - \_top 在顶层窗口打开
+  -
 
-## 八、URL/SEO优化
+## 八、URL/SEO 优化
 
-### 4.1.SEO优化
+### 4.1.SEO 优化
 
 SEO：搜索引擎优化
 
-h元素有助于网站的SEO
+h 元素有助于网站的 SEO
 
 ## 九、字符编码
 
@@ -139,7 +134,7 @@ char（字符）set（设置）：字符编码
 
 字符编码：
 
-- ​	计算机中所有东西最终表示为0101表示
+- ​ 计算机中所有东西最终表示为 0101 表示
 
 ## 十、快捷键
 
@@ -151,4 +146,3 @@ ctrl+enter
 
 - alt+鼠标点击
 - alt+shift+鼠标拖动
-

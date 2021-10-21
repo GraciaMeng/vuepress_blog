@@ -2,9 +2,9 @@
 title: 文章标题
 date: 2020-02-02
 tags:
- - 标签
+  - 标签
 categories:
- - 分类
+  - 分类
 sticky: 1   //文章置顶 1, 2, 3, ...
 isShowComments: false //是否开启评论
 publish: true //文章是否发布

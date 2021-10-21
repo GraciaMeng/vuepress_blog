@@ -2,17 +2,16 @@
 title: Day13HTML5相关标签
 date: 2020-6-20
 categories:
- - html
+  - html
 tags:
- - html
-publish: true
+  - html
 ---
 
 <!-- more -->
 
 # 内容概述
 
-## 1、HTML5相关的标签
+## 1、HTML5 相关的标签
 
 - 语义化的标签
   - nav 导航元素
@@ -28,7 +27,7 @@ publish: true
     - autoplay ：自动播放，存在兼容性问题
     - muted ：静音和，增加后不静音并且自动播放会生效
     - loop ：循环播放
-    - 如果存在兼容性问题，可以将视频格式的数据源放到source元素中，通过src指定数据来源
+    - 如果存在兼容性问题，可以将视频格式的数据源放到 source 元素中，通过 src 指定数据来源
   - audio 音频
     - 同上
 

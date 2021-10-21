@@ -1,3 +1,15 @@
+---
+title: react基础知识
+date: 2021-6-2
+categories:
+  - react
+tags:
+  - react
+publish: true
+---
+
+<!-- more -->
+
 # 一、hello react
 
 ```react
@@ -9,9 +21,9 @@
 </script>
 ```
 
-# 二、虚拟DOM的两种创建方式
+# 二、虚拟 DOM 的两种创建方式
 
-## 1.使用jsx创建虚拟DOM
+## 1.使用 jsx 创建虚拟 DOM
 
 ```react
 //1.创建虚拟DOM
@@ -24,7 +36,7 @@ const VDOM = (  /* 此处一定不要写引号，因为不是字符串 */
 ReactDOM.render(VDOM,document.getElementById('test'))
 ```
 
-## 2.使用js创建虚拟DOM
+## 2.使用 js 创建虚拟 DOM
 
 ```react
 //1.创建虚拟DOM
@@ -33,12 +45,9 @@ const VDOM = React.createElement('h1',{id:'title'},React.createElement('span',{}
 ReactDOM.render(VDOM,document.getElementById('test'))
 ```
 
-## 3.虚拟DOM与真实DOM
+## 3.虚拟 DOM 与真实 DOM
 
-关于虚拟DOM：
-    1.本质是Object类型的对象（一般对象）
-    2.虚拟DOM比较“轻”，真实DOM比较“重”，因为虚拟DOM是React内部在用，无需真实DOM上那么多的属性。
-    3.虚拟DOM最终会被React转化为真实DOM，呈现在页面上。
+关于虚拟 DOM： 1.本质是 Object 类型的对象（一般对象） 2.虚拟 DOM 比较“轻”，真实 DOM 比较“重”，因为虚拟 DOM 是 React 内部在用，无需真实 DOM 上那么多的属性。 3.虚拟 DOM 最终会被 React 转化为真实 DOM，呈现在页面上。
 
 ```react
 //1.创建虚拟DOM
@@ -58,18 +67,11 @@ debugger;
 // console.log(VDOM instanceof Object);
 ```
 
-# 三、jsx语法规则
+# 三、jsx 语法规则
 
-jsx语法规则：
-		1.定义虚拟DOM时，不要写引号。
-		2.标签中混入JS表达式时要用{}。
-		3.样式的类名指定不要用class，要用className。
-		4.内联样式，要用style={{key:value}}的形式去写。
-		5.只有一个根标签
-		6.标签必须闭合
-		7.标签首字母
-				(1).若小写字母开头，则将该标签转为html中同名元素，若html中无该标签对应的同名元素，则报错。
-				(2).若大写字母开头，react就去渲染对应的组件，若组件没有定义，则报错。
+jsx 语法规则： 1.定义虚拟 DOM 时，不要写引号。 2.标签中混入 JS 表达式时要用{}。 3.样式的类名指定不要用 class，要用 className。 4.内联样式，要用 style={{key:value}}的形式去写。 5.只有一个根标签 6.标签必须闭合 7.标签首字母
+(1).若小写字母开头，则将该标签转为 html 中同名元素，若 html 中无该标签对应的同名元素，则报错。
+(2).若大写字母开头，react 就去渲染对应的组件，若组件没有定义，则报错。
 
 ```react
 const myId = 'aTgUiGu'
@@ -91,21 +93,19 @@ const VDOM = (
 ReactDOM.render(VDOM,document.getElementById('test'))
 ```
 
-# 四、jsx小练习-map列表循环
+# 四、jsx 小练习-map 列表循环
 
-一定注意区分：【js语句(代码)】与【js表达式】
-		1.表达式：一个表达式会产生一个值，可以放在任何一个需要值的地方
-				下面这些都是表达式：
-				(1). a
-				(2). a+b
-				(3). demo(1)
-				(4). arr.map() 
-				(5). function test () {}
-		2.语句(代码)：
-				下面这些都是语句(代码)：
-				(1).if(){}
-				(2).for(){}
-				(3).switch(){case:xxxx}
+一定注意区分：【js 语句(代码)】与【js 表达式】 1.表达式：一个表达式会产生一个值，可以放在任何一个需要值的地方
+下面这些都是表达式：
+(1). a
+(2). a+b
+(3). demo(1)
+(4). arr.map()
+(5). function test () {} 2.语句(代码)：
+下面这些都是语句(代码)：
+(1).if(){}
+(2).for(){}
+(3).switch(){case:xxxx}
 
 ```react
 //模拟一些数据
@@ -127,13 +127,12 @@ const VDOM = (
 ReactDOM.render(VDOM,document.getElementById('test'))
 ```
 
-# 五、react中定义组件
+# 五、react 中定义组件
 
 ## 1.函数式组件
 
-执行了ReactDOM.render(\<MyComponent/>.......之后，发生了什么？
-		1.React解析组件标签，找到了MyComponent组件。
-		2.发现组件是使用函数定义的，随后调用该函数，将返回的虚拟DOM转为真实DOM，随后呈现在页面中。
+执行了 ReactDOM.render(\<MyComponent/>.......之后，发生了什么？
+1.React 解析组件标签，找到了 MyComponent 组件。 2.发现组件是使用函数定义的，随后调用该函数，将返回的虚拟 DOM 转为真实 DOM，随后呈现在页面中。
 
 ```react
 //1.创建函数式组件
@@ -147,10 +146,8 @@ ReactDOM.render(<MyComponent/>,document.getElementById('test'))
 
 ## 2.类式组件
 
-执行了ReactDOM.render(\<MyComponent/>.......之后，发生了什么？
-		1.React解析组件标签，找到了MyComponent组件。
-		2.发现组件是使用类定义的，随后new出来该类的实例，并通过该实例调用到原型上的render方法。
-		3.将render返回的虚拟DOM转为真实DOM，随后呈现在页面中。
+执行了 ReactDOM.render(\<MyComponent/>.......之后，发生了什么？
+1.React 解析组件标签，找到了 MyComponent 组件。 2.发现组件是使用类定义的，随后 new 出来该类的实例，并通过该实例调用到原型上的 render 方法。 3.将 render 返回的虚拟 DOM 转为真实 DOM，随后呈现在页面中。
 
 ```react
 //1.创建类式组件
@@ -166,7 +163,7 @@ class MyComponent extends React.Component {
 ReactDOM.render(<MyComponent/>,document.getElementById('test'))
 ```
 
-# 六、组件实例三大属性1_state
+# 六、组件实例三大属性 1_state
 
 ## 1.state
 
@@ -207,10 +204,10 @@ class Weather extends React.Component{
     }
 }
 //2.渲染组件到页面
-ReactDOM.render(<Weather/>,document.getElementById('test'))		
+ReactDOM.render(<Weather/>,document.getElementById('test'))
 ```
 
-## 2.state的简写方式
+## 2.state 的简写方式
 
 ```react
 //1.创建组件
@@ -229,12 +226,12 @@ class Weather extends React.Component{
     }
 }
 //2.渲染组件到页面
-ReactDOM.render(<Weather/>,document.getElementById('test'))	
+ReactDOM.render(<Weather/>,document.getElementById('test'))
 ```
 
-# 七、组件实例三大属性2_props
+# 七、组件实例三大属性 2_props
 
-## 1.props基本使用
+## 1.props 基本使用
 
 ```react
 //创建组件
@@ -260,7 +257,7 @@ const p = {name:'老刘',age:18,sex:'女'}
 ReactDOM.render(<Person {...p}/>,document.getElementById('test3'))
 ```
 
-## 2.对props进行限制
+## 2.对 props 进行限制
 
 ```react
 class Person extends React.Component{
@@ -303,7 +300,7 @@ function speak(){
 }
 ```
 
-## 3.props的简写方式
+## 3.props 的简写方式
 
 ```react
 class Person extends React.Component{
@@ -341,7 +338,7 @@ class Person extends React.Component{
 ReactDOM.render(<Person name="jerry"/>,document.getElementById('test1'))
 ```
 
-## 4.函数组件使用props
+## 4.函数组件使用 props
 
 ```react
 function Person (props){
@@ -369,9 +366,9 @@ Person.defaultProps = {
 ReactDOM.render(<Person name="jerry"/>,document.getElementById('test1'))
 ```
 
-# 八、组件实例三大属性3_refs
+# 八、组件实例三大属性 3_refs
 
-## 1.字符串形式的ref
+## 1.字符串形式的 ref
 
 ```react
 //创建组件
@@ -400,7 +397,7 @@ class Demo extends React.Component{
 ReactDOM.render(<Demo a="1" b="2"/>,document.getElementById('test'))
 ```
 
-## 2.回调函数形式的ref
+## 2.回调函数形式的 ref
 
 ```react
 //创建组件
@@ -429,7 +426,7 @@ class Demo extends React.Component{
 ReactDOM.render(<Demo a="1" b="2"/>,document.getElementById('test'))
 ```
 
-## 3.回调ref中回调执行次数的问题
+## 3.回调 ref 中回调执行次数的问题
 
 ```react
 class Demo extends React.Component{
@@ -466,7 +463,7 @@ class Demo extends React.Component{
 ReactDOM.render(<Demo/>,document.getElementById('test'))
 ```
 
-## 4.createRef的使用
+## 4.createRef 的使用
 
 ```react
 class Demo extends React.Component{
@@ -495,14 +492,14 @@ class Demo extends React.Component{
 ReactDOM.render(<Demo a="1" b="2"/>,document.getElementById('test'))
 ```
 
-# 九、react中的事件处理
+# 九、react 中的事件处理
 
 ## 1.事件处理
 
-(1).通过onXxx属性指定事件处理函数(注意大小写)
-			a.React使用的是自定义(合成)事件, 而不是使用的原生DOM事件 —————— 为了更好的兼容性
-			b.React中的事件是通过事件委托方式处理的(委托给组件最外层的元素) ————————为了的高效
-(2).通过event.target得到发生事件的DOM元素对象 ——————————不要过度使用ref
+(1).通过 onXxx 属性指定事件处理函数(注意大小写)
+a.React 使用的是自定义(合成)事件, 而不是使用的原生 DOM 事件 —————— 为了更好的兼容性
+b.React 中的事件是通过事件委托方式处理的(委托给组件最外层的元素) ————————为了的高效
+(2).通过 event.target 得到发生事件的 DOM 元素对象 ——————————不要过度使用 ref
 
 ```react
 class Demo extends React.Component{
@@ -529,7 +526,7 @@ class Demo extends React.Component{
 ReactDOM.render(<Demo a="1" b="2"/>,document.getElementById('test'))
 ```
 
-# 十、react中收集表单数据
+# 十、react 中收集表单数据
 
 ## 1.非受控组件
 
@@ -585,24 +582,22 @@ class Login extends React.Component{
 }
 ```
 
-# 十一、高阶函数_函数柯里化
+# 十一、高阶函数\_函数柯里化
 
-## 1.高阶函数_函数柯里化
+## 1.高阶函数\_函数柯里化
 
-高阶函数：如果一个函数符合下面2个规范中的任何一个，那该函数就是高阶函数。
-		1.若A函数，接收的参数是一个函数，那么A就可以称之为高阶函数。
-		2.若A函数，调用的返回值依然是一个函数，那么A就可以称之为高阶函数。
-		常见的高阶函数有：Promise、setTimeout、arr.map()等等
+高阶函数：如果一个函数符合下面 2 个规范中的任何一个，那该函数就是高阶函数。 1.若 A 函数，接收的参数是一个函数，那么 A 就可以称之为高阶函数。 2.若 A 函数，调用的返回值依然是一个函数，那么 A 就可以称之为高阶函数。
+常见的高阶函数有：Promise、setTimeout、arr.map()等等
 
-函数的柯里化：通过函数调用继续返回函数的方式，实现多次接收参数最后统一处理的函数编码形式。 
+函数的柯里化：通过函数调用继续返回函数的方式，实现多次接收参数最后统一处理的函数编码形式。
 
 ```js
-function sum(a){
-    return(b)=>{
-        return (c)=>{
-            return a+b+c
-        }
-    }
+function sum(a) {
+  return (b) => {
+    return (c) => {
+      return a + b + c;
+    };
+  };
 }
 ```
 
@@ -705,7 +700,7 @@ class Life extends React.Component{
 }
 ```
 
-## 2.react生命周期(旧)
+## 2.react 生命周期(旧)
 
 ```
 1. 初始化阶段: 由ReactDOM.render()触发---初次渲染
@@ -788,12 +783,12 @@ class Count extends React.Component{
 }
 ```
 
-## 3.react生命周期(新)
+## 3.react 生命周期(新)
 
 ```js
 1. 初始化阶段: 由ReactDOM.render()触发---初次渲染
     1.	constructor()
-    2.	getDerivedStateFromProps 
+    2.	getDerivedStateFromProps
     3.	render()
     4.	componentDidMount() =====> 常用
     一般在这个钩子中做一些初始化的事，例如：开启定时器、发送网络请求、订阅消息
@@ -807,8 +802,6 @@ class Count extends React.Component{
     1.	componentWillUnmount()  =====> 常用
     一般在这个钩子中做一些收尾的事，例如：关闭定时器、取消订阅消息
 ```
-
-
 
 ```react
 class Count extends React.Component{
@@ -875,9 +868,9 @@ class Count extends React.Component{
 }
 ```
 
-# 十三、DOM的Diffing算法
+# 十三、DOM 的 Diffing 算法
 
-## 1.验证Diffing算法
+## 1.验证 Diffing 算法
 
 ```react
 class Time extends React.Component {
@@ -904,7 +897,7 @@ class Time extends React.Component {
 }
 ```
 
-## 2.key的作用
+## 2.key 的作用
 
 ```
 经典面试题:
@@ -912,7 +905,7 @@ class Time extends React.Component {
       2). 为什么遍历列表时，key最好不要用index?
 		1. 虚拟DOM中key的作用：
 			1). 简单的说: key是虚拟DOM对象的标识, 在更新显示时key起着极其重要的作用。
-			2). 详细的说: 当状态中的数据发生变化时，react会根据【新数据】生成【新的虚拟DOM】, 
+			2). 详细的说: 当状态中的数据发生变化时，react会根据【新数据】生成【新的虚拟DOM】,
 				随后React进行【新虚拟DOM】与【旧虚拟DOM】的diff比较，比较规则如下：
 					a. 旧虚拟DOM中找到了与新虚拟DOM相同的key：
 						(1).若虚拟DOM中内容没变, 直接使用之前的真实DOM
@@ -920,21 +913,21 @@ class Time extends React.Component {
 
 					b. 旧虚拟DOM中未找到与新虚拟DOM相同的key
 						根据数据创建新的真实DOM，随后渲染到到页面
-									
+
 		2. 用index作为key可能会引发的问题：
 			1. 若对数据进行：逆序添加、逆序删除等破坏顺序操作:
 					会产生没有必要的真实DOM更新 ==> 界面效果没问题, 但效率低。
 
 			2. 如果结构中还包含输入类的DOM：
 					会产生错误DOM更新 ==> 界面有问题。
-												
+
 			3. 注意！如果不存在对数据的逆序添加、逆序删除等破坏顺序操作，
 					用于渲染列表用于展示，使用index作为key是没有问题的。
-					
+
 		3. 开发中如何选择key?:
 			1.最好使用每条数据的唯一标识作为key, 比如id、手机号、身份证号、学号等唯一值。
 			2.如果确定只是简单的展示数据，用index也是可以的。
-			
+
 		慢动作回放----使用index索引值作为key
 
 			初始数据：
@@ -976,4 +969,3 @@ class Time extends React.Component {
 
 	 */
 ```
-

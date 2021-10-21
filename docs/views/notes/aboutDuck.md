@@ -6,6 +6,7 @@ categories:
 tags:
  - 烤
  - 鸭子
+sticky: 2 
 publish: true
 ---
 

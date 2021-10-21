@@ -1,34 +1,39 @@
+---
+title: vue的基本面试题
+date: 2021-6-5
+categories:
+  - vue
+tags:
+  - vue
+publish: true
+---
+
+<!-- more -->
+
 ### 1.插值、指令、动态属性、表达式、v-html
 
 插值表达式
 
-指令为     :
+指令为 :
 
-v-html把字符串中存在的标签转化为html页面标签，但可能会被黑客插入script脚步，造成xss风险
+v-html 把字符串中存在的标签转化为 html 页面标签，但可能会被黑客插入 script 脚步，造成 xss 风险
 
 ### 2.计算属性
 
-如果input中使用双向绑定在计算属性中，要使用getter和setter
+如果 input 中使用双向绑定在计算属性中，要使用 getter 和 setter
 
-set方法可以获取到双向绑定而改变的value值
+set 方法可以获取到双向绑定而改变的 value 值
 
 ```vue
-double :{
-	get(){
-		return this.num * 2
-	},
-	set(value){
-		this.num = value / 2
-	}
-}
+double :{ get(){ return this.num * 2 }, set(value){ this.num = value / 2 } }
 ```
 
-### 3.watch侦听器
+### 3.watch 侦听器
 
 ```js
 watch:{
 	info(newValue,oldValue){
-		console.log(newValue,oldValue)		
+		console.log(newValue,oldValue)
 	},
     // 侦听data的数据里面的对象数据
     info:{
@@ -44,48 +49,46 @@ watch:{
 ### 4.动态绑定类名和样式
 
 ```vue
-:class = "{'active':isActive}"
-:class = "['active']"
-:style="styleData"
+:class = "{'active':isActive}" :class = "['active']" :style="styleData"
 ```
 
-### 5.v-if和v-show区别
+### 5.v-if 和 v-show 区别
 
-v-show有很大的初始消耗，但利于频繁切换
+v-show 有很大的初始消耗，但利于频繁切换
 
-v-if只渲染符合条件的标签，有很大的切换消耗，利于初始化组件
+v-if 只渲染符合条件的标签，有很大的切换消耗，利于初始化组件
 
-### 6.v-for列表循环
+### 6.v-for 列表循环
 
-要添加:key，但只能是ke'yi'zuo'w唯一标识
+要添加:key，但只能是 ke'yi'zuo'w 唯一标识
 
 遍历列表：
 
 ```vue
-<li v-for="(item,index) in list" :key="item.id"></li>
+<li v-for="(item, index) in list" :key="item.id"></li>
 ```
 
 遍历对象：
 
 ```vue
-<li v-for="(value,key,index) in object" :key="key"></li>
+<li v-for="(value, key, index) in object" :key="key"></li>
 ```
 
-注意：v-if和v-for不能连用，因为在vue源码中v-for比v-if的优先级更高，会先进行for循环，再对循环体进行if判断，有很大的消耗
+注意：v-if 和 v-for 不能连用，因为在 vue 源码中 v-for 比 v-if 的优先级更高，会先进行 for 循环，再对循环体进行 if 判断，有很大的消耗
 
-因此要在外层添加template标签来做v-if判断
+因此要在外层添加 template 标签来做 v-if 判断
 
 ### 7.事件
 
-e.\__proto__.constructor 原生事件对象
+e.\_\_proto\_\_.constructor 原生事件对象
 
 e.target 点击事件的元素
 
 e.currentTarget 绑定事件元素
 
-当@clik需要传参和事件对象时，@click="increment(10,$event)"，$event为事件
+当@clik 需要传参和事件对象时，@click="increment(10,$event)"，$event 为事件
 
-### 8.父子组件通信方法之 props/$emit
+### 8.父子组件通信方法之 props/\$emit
 
 props:
 
@@ -102,25 +105,25 @@ props:['list']
 
 子向父发送事件且传递数据：
 
-this.$emit('事件名',参数)
+this.\$emit('事件名',参数)
 
 ### 9.兄弟组件通信方法
 
-创建event-bus的script文件
+创建 event-bus 的 script 文件
 
 ```js
-import Vue from 'vue';
+import Vue from "vue";
 const eventBus = new Vue();
-export default eventBUs
+export default eventBUs;
 ```
 
-要发送事件和数据的vue组件
+要发送事件和数据的 vue 组件
 
 ```vue
 eventBus.$emit('addItem', this.title);
 ```
 
-要接受事件和数据的vue组件
+要接受事件和数据的 vue 组件
 
 ```
 method:{
@@ -161,15 +164,11 @@ parent:App updated
 
 ### 11.nextTick
 
-页面更新渲染时，js是异步的，所以使用nextTick是可以保证页面渲染完成之后调用
+页面更新渲染时，js 是异步的，所以使用 nextTick 是可以保证页面渲染完成之后调用
 
 ```vue
-this.item.push(Math.random());
-this.$nextTick(()=>{
-	const ulElem = this.$ref.ulRef;
-	const length = ulElem.childNodes.length;
-	console.log(length)
-})
+this.item.push(Math.random()); this.$nextTick(()=>{ const ulElem =
+this.$ref.ulRef; const length = ulElem.childNodes.length; console.log(length) })
 ```
 
 ### 12.插槽
@@ -178,7 +177,7 @@ this.$nextTick(()=>{
 
 ### 13.作用域插槽
 
-父App
+父 App
 
 ```vue
 <current-user>
@@ -188,7 +187,7 @@ this.$nextTick(()=>{
 </current-user>
 ```
 
-子currentPage
+子 currentPage
 
 ```vue
 <slot :user="user">
@@ -199,10 +198,11 @@ this.$nextTick(()=>{
 ### 14.具名插槽
 
 ```vue
-<template v-slot="title"> //简写 #title
-	<h1>
-        hhh
-    </h1>
+<template v-slot="title">
+  //简写 #title
+  <h1>
+    hhh
+  </h1>
 </template>
 ```
 
@@ -221,9 +221,7 @@ this.$nextTick(()=>{
 用于初始渲染时，暂时不需要立刻展示到页面的组件，防止组件代码量大，渲染多，造成浪费。使用异步组件可以提高性能
 
 ```vue
-components:{
-	Test:()=>import(/* webpackChunkName:"test"*/'./Test')
-}
+components:{ Test:()=>import(/* webpackChunkName:"test"*/'./Test') }
 //webpackChunkName为页面下载的js文件的命名
 ```
 
@@ -231,15 +229,15 @@ components:{
 
 如果组件代码量大，反复的销毁和渲染会消耗性能
 
-keep-alive对组件进行缓存
+keep-alive 对组件进行缓存
 
-组件简单的话，选择v-show
+组件简单的话，选择 v-show
 
-组件复杂，体积大的话，选择keep-alive
+组件复杂，体积大的话，选择 keep-alive
 
 ### 18.mixins
 
-使用mixins抽离组件公共逻辑
+使用 mixins 抽离组件公共逻辑
 
 mixins: 局部调用，不影响全局；在每个组件中使用，引入组件中之后，各个变量是相互独立的，值的修改在组件中不会相互影响。
 vuex：本地仓库，影响全局数据
@@ -248,28 +246,25 @@ mixin.js
 
 ```js
 export default {
-	data(){
-        return {
-            commonData:'公共数据'
-        }
+  data() {
+    return {
+      commonData: "公共数据",
+    };
+  },
+  methods: {
+    commonMethod() {
+      console.log("公共方法");
     },
-    methods:{
-        commonMethod(){
-            console.log('公共方法')
-        }
-    },
-    mouted(){
-        console.log('common mouted')
-    }
-}
+  },
+  mouted() {
+    console.log("common mouted");
+  },
+};
 ```
 
 组件
 
 ```vue
-import mixin from 'mixin.js';
-export default {
-	mixins:[mixin]  //可以使用多个mixin
-}
+import mixin from 'mixin.js'; export default { mixins:[mixin]
+//可以使用多个mixin }
 ```
-

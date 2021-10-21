@@ -1,3 +1,14 @@
+---
+title: vue的基本面试题
+date: 2021-5-4
+categories:
+  - vue
+tags:
+  - vue
+---
+
+<!-- more -->
+
 ### 计算属性computed
 
 当页面渲染刷新的时候才会执行

@@ -2,19 +2,18 @@
 title: Day2css选择器
 date: 2020-4-24
 categories:
- - html
- - css
+  - html
+  - css
 tags:
- - html
- - css
-publish: true
+  - html
+  - css
 ---
 
 <!-- more -->
 
-# 内容概述2
+# 内容概述 2
 
-## 一、a元素补充
+## 一、a 元素补充
 
 - 锚点链接
 - 伪链接
@@ -22,29 +21,29 @@ publish: true
 
 ## 二、URL -> input
 
-- 协议头://主机ip:端口号/路径/parameters?query#fragment
+- 协议头://主机 ip:端口号/路径/parameters?query#fragment
 
-## 三、认识css
+## 三、认识 css
 
-- css作用
-- css历史
-- css官方链接
+- css 作用
+- css 历史
+- css 官方链接
 
-## 四、css的引入方式
+## 四、css 的引入方式
 
 - 内联样式
 
 - 文档样式表
 - 外部样式表
 
-## 五、css基础选择器
+## 五、css 基础选择器
 
 - 统配选择器
 - 元素选择器
 - 类选择器
-- id选择器
+- id 选择器
 
-## 六、css常见的属性
+## 六、css 常见的属性
 
 - color
 - bgc background-color
@@ -52,8 +51,8 @@ publish: true
 - width
 - height
 
-## 七、颜色空间RGB
+## 七、颜色空间 RGB
 
 - 单词关键词
 - rgb/rgba
-- 16进制
+- 16 进制

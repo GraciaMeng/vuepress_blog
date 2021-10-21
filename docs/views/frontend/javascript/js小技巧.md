@@ -1,3 +1,14 @@
+---
+title: js面试题
+date: 2021-4-23
+categories:
+ - 未完成
+tags:
+ - 未完成
+---
+
+<!-- more -->
+
 ## 1.获取URL参数并转换为对象
 
 ```js
