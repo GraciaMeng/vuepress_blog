@@ -129,6 +129,8 @@ export default {
 
 # 9.asyncData
 
+
+```vue
 <template>
 	<div>
         {{info.name}}
@@ -143,7 +145,7 @@ export default {
     }
     async asyncData(){
         let {data} = await axios.get();
-        
-    }
+	}
 }
 </script>
+```

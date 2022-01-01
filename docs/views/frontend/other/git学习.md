@@ -28,10 +28,13 @@ git reset \<arg>
 
 - \<filename> add 一个文件但是后悔了，本次提交不应有他，在 commit 之前使用
 - \<commitId>退回版本
-  - --hard 不保存所有变更
-  - --soft 保留变更且变更内容处于 Staged
-  - --mixed 保留变更内容且变更内容处于 Modified
+  - --hard 不保存所有变更 （删除工作空间改动代码，撤销commit，撤销git add .）
+  - --soft 保留变更且变更内容处于 Staged （不删除工作空间改动代码，撤销commit，不撤销git add . ）
+  - --mixed 保留变更内容且变更内容处于 Modified （不删除工作空间改动代码，撤销commit，并且撤销git add . 操作）
 - 如果后悔想回到最新的 commit？可以 git reflog 查看所有，再次使用 git reset
+- **git reset --soft HEAD^**
+- HEAD^的意思是上一个版本，也可以写成HEAD~1，如果你进行了2次commit，想都撤回，可以使用HEAD~2。
+- **git commit --amend** 修改commit信息
 
 alias
 
