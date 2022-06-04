@@ -5,7 +5,7 @@ categories:
   - typescript
 tags:
   - typescript
-publish: true
+publish: false
 ---
 
 <!-- more -->

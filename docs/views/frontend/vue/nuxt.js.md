@@ -5,6 +5,7 @@ categories:
   - vue
 tags:
   - nuxt
+publish: true
 ---
 
 <!-- more -->

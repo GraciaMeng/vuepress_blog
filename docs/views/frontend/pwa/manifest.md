@@ -1,3 +1,15 @@
+---
+title: pwa渐进式manifest配置方案
+date: 2021-6-6
+categories:
+  - 学习笔记
+tags:
+  - web
+publish: false
+---
+
+<!-- more -->
+
 # web app manifest
 
 ```html
