@@ -106,3 +106,23 @@ git commit -m 'xxx'
 git pull origin master
 
 再重新 git add commit 操作
+
+# 简写命令
+
+cmd中git config --global -e打开 .gitconfig
+
+```
+// 在后面添加
+[alias]
+	st = status
+	co = checkout
+	ci = commit
+	cm = commit -m
+	ca = commit -a
+	ps = push
+	br = branch
+	mg = merge
+	cf = config
+	l = log
+```
+
