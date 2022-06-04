@@ -1,5 +1,6 @@
 const nav = require('./config/nav.js');
 module.exports = {
+  base: '/vuepress_blog/',
   title: 'Graica',
   description: 'the blog of Gracia in 2021-4-10',
   dest: './dist',
