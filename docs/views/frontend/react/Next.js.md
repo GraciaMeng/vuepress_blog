@@ -30,26 +30,26 @@ npx create-next-app 项目名称
 
 1. 标签跳转
 
-   - ```react
+   - ```jsx
      import Link from 'next/link';
      <Link href="/"><a>返回首页</a></Link>
      ```
 
 2. 编程跳转
 
-   - ```react
+   - ```jsx
      import Router from 'next/router';
      <button onClick={()=>Router.push('/')}></button>
      ```
 
 # 5.路由跳转使用 query 传递参数和接受参数
 
-```react
+```jsx
 import Link from 'next/link';
 <Link href="/hhh?name=hhh"><a>返回首页</a></Link>
 ```
 
-```react
+```jsx
 import Router from 'next/router';
 const goto = ()=>{
     Router.push({
@@ -69,7 +69,7 @@ const goto = ()=>{
 - hashChangeStart
 - hashChangeComplete
 
-```react
+```jsx
 Router.event.on('routeChangeStart',()=>{})
 ```
 
@@ -79,7 +79,7 @@ getServerSideProps 是动态的获取数据，每一次访问页面的时候都�
 
 相当于服务器处理
 
-```react
+```jsx
 export const getServerSideProps = async (context)=>{
   const {query} = context;
   const {
@@ -104,14 +104,14 @@ export const getServerSideProps = async (context)=>{
 
 # 9.LazyLoading 实现模块懒加载
 
-```react
+```jsx
 import dynamic from 'next/dynamic';
 const One = dynamic(import(''))
 ```
 
 # 10.自定义 head 更加友好的 SEO
 
-```react
+```jsx
 import Head from 'next/head';
 
 <Head>

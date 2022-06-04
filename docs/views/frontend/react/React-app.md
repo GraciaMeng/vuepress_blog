@@ -54,7 +54,7 @@ index.html
 
 css module 文件
 
-```react
+```jsx
 import hello from './index.module.css'
 <h2 className={hello.title}>Hello,React!</h2>
 ```
@@ -126,7 +126,7 @@ module.exports = function(app) {
 
 ## 1.BrowserRouter
 
-说明：使用 HTML5 历史记录 API（pushState，replaceState 和 popstate 事件）的<Router>来保持 UI 与 URL 的同步
+说明：使用 HTML5 历史记录 API（pushState，replaceState 和 popstate 事件）的\<Router\>来保持 UI 与 URL 的同步
 
 1. basename:string
 
@@ -150,7 +150,7 @@ module.exports = function(app) {
 
 ## 2.HashRouter
 
-说明：使用 URL 的哈希部分（即 window.location.hash）的<路由器>可以保持您的 UI 与 URL 同步。注意：哈希历史记录不支持 location.key 或 location.state。 在以前的版本中，我们试图缓和行为，但是有一些边缘案例我们无法解决。 任何需要此行为的代码或插件将无法正常工作。 由于此技术仅用于支持旧版浏览器，因此我们建议您将服务器配置为使用\<BrowserHistory>
+说明：使用 URL 的哈希部分（即 window.location.hash）的<路由器>可以保持您的 UI 与 URL 同步。注意：哈希历史记录不支持 location.key 或 location.state。 在以前的版本中，我们试图缓和行为，但是有一些边缘案例我们无法解决。 任何需要此行为的代码或插件将无法正常工作。 由于此技术仅用于支持旧版浏览器，因此我们建议您将服务器配置为使用\<BrowserHistory\>
 
 1. basename:string(与 BrowserRouter 相同)
 2. getUserConfirmation：function(与 BrowserRouter 相同)
@@ -178,7 +178,7 @@ module.exports = function(app) {
 
 在 React 中靠路由链接实现切换组件--编写路由链接
 
-```react
+```jsx
 <Link className="list-group-item" to="/about">About</Link>
 <Link className="list-group-item" to="/home">Home</Link>
 ```
@@ -218,7 +218,7 @@ module.exports = function(app) {
 
 页面使用：注册路由
 
-```react
+```jsx
 <Route path="/about" component={About}/>
 <Route path="/home" component={Home}/>
 ```
@@ -243,19 +243,19 @@ module.exports = function(app) {
 
 4. strict: bool
 
-当为真时，在确定位置是否与当前网址匹配时，将考虑位置路径名上的尾部斜线。 有关详细信息，请参阅<Route strict>文档。
+当为真时，在确定位置是否与当前网址匹配时，将考虑位置路径名上的尾部斜线。 有关详细信息，请参阅\<Route strict>文档。
 
 5. isActive: func
 
 添加用于确定链接是否活动的额外逻辑的功能。 如果您想要更多地验证链接的路径名与当前 URL 的路径名匹配，则应该使用这一点。
 
-```react
+```jsx
 <NavLink activeClassName="atguigu" className="list-group-item" to="/about">About</NavLink>
 ```
 
 > ##### 封装 NavLink
 
-```react
+```jsx
 <NavLink activeClassName="atguigu" className="list-group-item" {...this.props}/>
 ```
 
@@ -265,7 +265,7 @@ module.exports = function(app) {
 
 例：如果匹配成功，则会停止继续匹配
 
-```react
+```jsx
 <Switch>
     <Route path="/about" component={About}/>
     <Route path="/home" component={Home}/>
@@ -291,9 +291,9 @@ module.exports = function(app) {
 
 4. from:string
 
-要重定向的路径名。 这可以用于在<Switch>内部渲染<Redirect>时匹配位置。
+要重定向的路径名。 这可以用于在\<Switch\>内部渲染\<Redirect\>时匹配位置。
 
-```react
+```jsx
 import { Route, Redirect } from 'react-router'
 
 <Route exact path="/" render={() => (
@@ -311,19 +311,19 @@ import { Route, Redirect } from 'react-router'
 
 Route 声明 params 参数
 
-```react
+```jsx
 <Route path="/home/message/detail/:id/:title" component={Detail}/>
 ```
 
 Link 实现传递，主要是以/路径实现
 
-```react
+```jsx
 <Link to={`/home/message/detail/${msgObj.id}/${msgObj.title}`}>{msgObj.title}</Link>
 ```
 
 组件接受参数
 
-```react
+```jsx
 const {id,title} = this.props.match.params
 ```
 
@@ -331,19 +331,19 @@ const {id,title} = this.props.match.params
 
 search 参数无需声明接收，正常注册路由即可
 
-```react
+```jsx
 <Route path="/home/message/detail" component={Detail}/>
 ```
 
 Link 实现传递，主要是以&连接参数
 
-```react
+```jsx
 <Link to={`/home/message/detail/?id=${msgObj.id}&title=${msgObj.title}`}>{msgObj.title}</Link>
 ```
 
 组件接受参数
 
-```react
+```jsx
 import qs from 'querystring'
 const {search} = this.props.location
 const {id,title} = qs.parse(search.slice(1))
@@ -353,19 +353,19 @@ const {id,title} = qs.parse(search.slice(1))
 
 state 参数无需声明接收，正常注册路由即可
 
-```react
+```jsx
 <Route path="/home/message/detail" component={Detail}/>
 ```
 
 Link 实现传递，主要是以 state 参数
 
-```react
+```jsx
 <Link to={{pathname:'/home/message/detail',state:{id:msgObj.id,title:msgObj.title}}}>{msgObj.title}</Link>
 ```
 
 组件接受参数
 
-```react
+```jsx
 const {id,title} = this.props.location.state || {}
 const findResult = DetailData.find((detailObj)=>{
     return detailObj.id === id
@@ -376,7 +376,7 @@ const findResult = DetailData.find((detailObj)=>{
 
 ## 1.push
 
-```react
+```jsx
 //push跳转+携带params参数
 this.props.history.push(`/home/message/detail/${id}/${title}`)
 //push跳转+携带search参数
@@ -387,7 +387,7 @@ this.props.history.push(`/home/message/detail`,{id,title})
 
 ## 2.replace
 
-```react
+```jsx
 //replace跳转+携带params参数
 this.props.history.replace(`/home/message/detail/${id}/${title}`)
 //replace跳转+携带search参数
@@ -415,6 +415,6 @@ this.props.history.goBack()
 所以`withRouter`的作用就是, 如果我们某个东西不是一个`Router`, 但是我们要依靠它去跳转一个页面, 比如点击页面的`logo`, 返回首页, 这时候就可以使用`withRouter`来做.
 在这个例子中, 我将`span`使用`withRouter`作为一个可点击跳转的`Link`
 
-```react
+```jsx
 export default withRouter(ComponentName)
 ```

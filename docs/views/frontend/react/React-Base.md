@@ -1,10 +1,10 @@
 ---
-title: react基础知识
-date: 2021-6-2
+title: react 基础
+date: 2021-7-23
 categories:
-  - react
+ - react
 tags:
-  - react
+ - react
 publish: true
 ---
 
@@ -12,7 +12,7 @@ publish: true
 
 # 一、hello react
 
-```react
+```jsx
 <script type="text/babel" > /* 此处一定要写babel */
     //1.创建虚拟DOM
     const VDOM = <h1>Hello,React</h1> /* 此处一定不要写引号，因为不是字符串 */
@@ -25,7 +25,7 @@ publish: true
 
 ## 1.使用 jsx 创建虚拟 DOM
 
-```react
+```jsx
 //1.创建虚拟DOM
 const VDOM = (  /* 此处一定不要写引号，因为不是字符串 */
     <h1 id="title">
@@ -38,7 +38,7 @@ ReactDOM.render(VDOM,document.getElementById('test'))
 
 ## 2.使用 js 创建虚拟 DOM
 
-```react
+```jsx
 //1.创建虚拟DOM
 const VDOM = React.createElement('h1',{id:'title'},React.createElement('span',{},'Hello,React'))
 //2.渲染虚拟DOM到页面
@@ -49,7 +49,7 @@ ReactDOM.render(VDOM,document.getElementById('test'))
 
 关于虚拟 DOM： 1.本质是 Object 类型的对象（一般对象） 2.虚拟 DOM 比较“轻”，真实 DOM 比较“重”，因为虚拟 DOM 是 React 内部在用，无需真实 DOM 上那么多的属性。 3.虚拟 DOM 最终会被 React 转化为真实 DOM，呈现在页面上。
 
-```react
+```jsx
 //1.创建虚拟DOM
 const VDOM = (  /* 此处一定不要写引号，因为不是字符串 */
     <h1 id="title">
@@ -69,11 +69,18 @@ debugger;
 
 # 三、jsx 语法规则
 
-jsx 语法规则： 1.定义虚拟 DOM 时，不要写引号。 2.标签中混入 JS 表达式时要用{}。 3.样式的类名指定不要用 class，要用 className。 4.内联样式，要用 style={{key:value}}的形式去写。 5.只有一个根标签 6.标签必须闭合 7.标签首字母
+jsx 语法规则： 
+1.定义虚拟 DOM 时，不要写引号。 
+2.标签中混入 JS 表达式时要用{}。 
+3.样式的类名指定不要用 class，要用 className。 
+4.内联样式，要用 `style=\{\{key:value\}\}`的形式去写。 
+5.只有一个根标签 
+6.标签必须闭合 
+7.标签首字母
 (1).若小写字母开头，则将该标签转为 html 中同名元素，若 html 中无该标签对应的同名元素，则报错。
 (2).若大写字母开头，react 就去渲染对应的组件，若组件没有定义，则报错。
 
-```react
+```jsx
 const myId = 'aTgUiGu'
 const myData = 'HeLlo,rEaCt'
 
@@ -107,7 +114,7 @@ ReactDOM.render(VDOM,document.getElementById('test'))
 (2).for(){}
 (3).switch(){case:xxxx}
 
-```react
+```jsx
 //模拟一些数据
 const data = ['Angular','React','Vue']
 //1.创建虚拟DOM
@@ -134,7 +141,7 @@ ReactDOM.render(VDOM,document.getElementById('test'))
 执行了 ReactDOM.render(\<MyComponent/>.......之后，发生了什么？
 1.React 解析组件标签，找到了 MyComponent 组件。 2.发现组件是使用函数定义的，随后调用该函数，将返回的虚拟 DOM 转为真实 DOM，随后呈现在页面中。
 
-```react
+```jsx
 //1.创建函数式组件
 function MyComponent(){
     console.log(this); //此处的this是undefined，因为babel编译后开启了严格模式
@@ -149,7 +156,7 @@ ReactDOM.render(<MyComponent/>,document.getElementById('test'))
 执行了 ReactDOM.render(\<MyComponent/>.......之后，发生了什么？
 1.React 解析组件标签，找到了 MyComponent 组件。 2.发现组件是使用类定义的，随后 new 出来该类的实例，并通过该实例调用到原型上的 render 方法。 3.将 render 返回的虚拟 DOM 转为真实 DOM，随后呈现在页面中。
 
-```react
+```jsx
 //1.创建类式组件
 class MyComponent extends React.Component {
     render(){
@@ -167,7 +174,7 @@ ReactDOM.render(<MyComponent/>,document.getElementById('test'))
 
 ## 1.state
 
-```react
+```jsx
 //1.创建组件
 class Weather extends React.Component{
     //构造器调用几次？ ———— 1次
@@ -209,7 +216,7 @@ ReactDOM.render(<Weather/>,document.getElementById('test'))
 
 ## 2.state 的简写方式
 
-```react
+```jsx
 //1.创建组件
 class Weather extends React.Component{
     //初始化状态
@@ -233,7 +240,7 @@ ReactDOM.render(<Weather/>,document.getElementById('test'))
 
 ## 1.props 基本使用
 
-```react
+```jsx
 //创建组件
 class Person extends React.Component{
     render(){
@@ -259,7 +266,7 @@ ReactDOM.render(<Person {...p}/>,document.getElementById('test3'))
 
 ## 2.对 props 进行限制
 
-```react
+```jsx
 class Person extends React.Component{
     render(){
         const {name,age,sex} = this.props
@@ -302,7 +309,7 @@ function speak(){
 
 ## 3.props 的简写方式
 
-```react
+```jsx
 class Person extends React.Component{
     constructor(props){
         //构造器是否接收props，是否传递给super，取决于：是否希望在构造器中通过this访问props
@@ -340,7 +347,7 @@ ReactDOM.render(<Person name="jerry"/>,document.getElementById('test1'))
 
 ## 4.函数组件使用 props
 
-```react
+```jsx
 function Person (props){
     const {name,age,sex} = props
     return (
@@ -370,7 +377,7 @@ ReactDOM.render(<Person name="jerry"/>,document.getElementById('test1'))
 
 ## 1.字符串形式的 ref
 
-```react
+```jsx
 //创建组件
 class Demo extends React.Component{
     //展示左侧输入框的数据
@@ -399,7 +406,7 @@ ReactDOM.render(<Demo a="1" b="2"/>,document.getElementById('test'))
 
 ## 2.回调函数形式的 ref
 
-```react
+```jsx
 //创建组件
 class Demo extends React.Component{
     //展示左侧输入框的数据
@@ -428,7 +435,7 @@ ReactDOM.render(<Demo a="1" b="2"/>,document.getElementById('test'))
 
 ## 3.回调 ref 中回调执行次数的问题
 
-```react
+```jsx
 class Demo extends React.Component{
     state = {isHot:false}
     showInfo = ()=>{
@@ -465,7 +472,7 @@ ReactDOM.render(<Demo/>,document.getElementById('test'))
 
 ## 4.createRef 的使用
 
-```react
+```jsx
 class Demo extends React.Component{
     /* React.createRef调用后可以返回一个容器，该容器可以存储被ref所标识的节点,该容器是“专人专用”的*/
     myRef = React.createRef()
@@ -501,7 +508,7 @@ a.React 使用的是自定义(合成)事件, 而不是使用的原生 DOM 事件
 b.React 中的事件是通过事件委托方式处理的(委托给组件最外层的元素) ————————为了的高效
 (2).通过 event.target 得到发生事件的 DOM 元素对象 ——————————不要过度使用 ref
 
-```react
+```jsx
 class Demo extends React.Component{
     myRef = React.createRef()
 	myRef2 = React.createRef()
@@ -530,7 +537,7 @@ ReactDOM.render(<Demo a="1" b="2"/>,document.getElementById('test'))
 
 ## 1.非受控组件
 
-```react
+```jsx
 class Login extends React.Component{
     handleSubmit = (event)=>{
         event.preventDefault() //阻止表单提交
@@ -553,7 +560,7 @@ ReactDOM.render(<Login/>,document.getElementById('test'))
 
 ## 2.受控组件
 
-```react
+```jsx
 class Login extends React.Component{
     state = {
         username:'', //用户名
@@ -601,7 +608,7 @@ function sum(a) {
 }
 ```
 
-```react
+```jsx
 class Login extends React.Component{
     state = {
         username:'', //用户名
@@ -631,7 +638,7 @@ class Login extends React.Component{
 
 ## 2.不用函数柯里化的实现
 
-```react
+```jsx
 class Login extends React.Component{
     state = {
         username:'', //用户名
@@ -663,7 +670,7 @@ class Login extends React.Component{
 
 生命周期回调函数 <=> 生命周期钩子函数 <=> 生命周期函数 <=> 生命周期钩子
 
-```react
+```jsx
 class Life extends React.Component{
     state = {opacity:1}
     death = ()=>{
@@ -719,7 +726,7 @@ class Life extends React.Component{
     一般在这个钩子中做一些收尾的事，例如：关闭定时器、取消订阅消息
 ```
 
-```react
+```jsx
 class Count extends React.Component{
     constructor(props){
         console.log('Count---constructor');
@@ -803,7 +810,7 @@ class Count extends React.Component{
     一般在这个钩子中做一些收尾的事，例如：关闭定时器、取消订阅消息
 ```
 
-```react
+```jsx
 class Count extends React.Component{
     constructor(props){
         console.log('Count---constructor');
@@ -872,7 +879,7 @@ class Count extends React.Component{
 
 ## 1.验证 Diffing 算法
 
-```react
+```jsx
 class Time extends React.Component {
     state = {date: new Date()}
     componentDidMount () {

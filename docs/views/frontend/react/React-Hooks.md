@@ -12,7 +12,7 @@ publish: true
 
 # 1.useState
 
-```react
+```jsx
 const [count,setCount] = useState(0)
 ```
 
@@ -32,7 +32,7 @@ const [count,setCount] = useState(0)
 
 # 2.useReducers
 
-```react
+```jsx
 const countReducer = (state,action) => {
 	switch(action.type){
         case 'add':
@@ -92,7 +92,7 @@ useEffect 会在整个真实 dom 渲染完成后才会执行（异步）
 
 3.有依赖项，并且依赖项不一致的时候会执行
 
-```react
+```jsx
 useEffect(()=>{
    let timer = setInterval(()=>{
        setCount(count => count + 1); //如果不使用这种形式，会一直拿的是初始的count
@@ -105,7 +105,7 @@ useEffect(()=>{
 
 自定义 hook，关注点分离：
 
-```react
+```jsx
 const useCount = ()=>{
 	const [count,setCount] = useStaet(0);
     useEffect(()=>{
@@ -117,7 +117,7 @@ const useCount = ()=>{
 
 # 4.useContext
 
-```react
+```jsx
 const AppContext = createContext()
 
 class Foo extends React.Component {
@@ -166,7 +166,7 @@ const App = (params) => {
 
 第一种（不建议）
 
-```react
+```jsx
 class Foo extends React.Component {
     handleInput = (input) => {
         this.input = input
@@ -187,7 +187,7 @@ class Foo extends React.Component {
 
 第二种（推荐）：父组件使用子组件的 ref
 
-```react
+```jsx
 class Foo extends React.Component {
     inputRef = createRef();
     onClick = ()=>{
@@ -220,7 +220,7 @@ const App = (params) => {
 
 1.子组件使用 ref
 
-```react
+```jsx
 const Foo =()=> {
     const inputRef = useRef();
     onClick = ()=>{
@@ -237,7 +237,7 @@ const Foo =()=> {
 
 2.父组件引导子组件用 ref
 
-```react
+```jsx
 const Foo =forward((params,inputRef)=> {
     onClick = ()=>{
         inputRef.current.focus()
@@ -286,7 +286,7 @@ useMemo 返回的是一个具体值，useCallback 返回具体函数
 useCallbacl(fn, deps) 相当于 useMemo(()=>fn,deps)
 ```
 
-```react
+```jsx
 import React, { useState,memo,PureComponent,useCallback,useMemo } from "react";
 
 // 1.

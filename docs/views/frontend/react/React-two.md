@@ -38,7 +38,7 @@ publish: true
 
 ### 路由组件的 lazyLoad
 
-```js
+```jsx
 	//1.通过React的lazy函数配合import()函数动态加载路由组件 ===> 路由组件代码会被分开打包
 	const Login = lazy(()=>import('@/pages/Login'))
 
@@ -136,7 +136,7 @@ publish: true
 
 ### 使用
 
-```js
+```
 1) 创建Context容器对象：
 	const XxxContext = React.createContext()
 
@@ -238,7 +238,7 @@ publish: true
 
 getDerivedStateFromError 配合 componentDidCatch
 
-```js
+```jsx
 // 生命周期函数，一旦后台组件报错，就会触发
 static getDerivedStateFromError(error) {
     console.log(error);
